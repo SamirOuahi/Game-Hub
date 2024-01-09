@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>GameHub</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <!-- Avant de regarder le contenu de ma variable, je vais vérifier qu'elle existe -->
+    <% if(typeof cssFile !== 'undefined') { %>
+    <link rel="stylesheet" href="<%= cssFile %>" />
+    <% } %>
+  </head>
+
+  <body>
+    <header>
+      <h1>GameHub</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/search">Recherche un jeu</a></li>
+          <% for(const game of games) { %>
+          <li><a href="/game/<%= game.name %>"><%= game.title %></a></li>
+          <% } %>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>

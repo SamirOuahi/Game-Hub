@@ -1,0 +1,54 @@
+body {
+  background-color: aqua;
+}
+.not-found__container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.not-found__title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+.not-found__image {
+  animation-name: tilt-shaking;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transition: all 0.3s linear;
+}
+
+.not-found__image:hover {
+  scale: 1.2;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes tilt-shaking {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0eg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

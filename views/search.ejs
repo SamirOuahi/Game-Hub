@@ -1,0 +1,26 @@
+<%- include('partials/header.ejs', {cssFile: '/css/search.css'}) %>
+
+<main class="search">
+  <form class="search__form">
+    <div>
+      <label for="search">Rechercher un jeu</label>
+      <input
+        type="search"
+        id="search"
+        name="searchText"
+        placeholder="Nom du jeu"
+      />
+    </div>
+    <button type="submit">Rechercher</button>
+  </form>
+  <div>
+    <% for(const game of gamesFiltered) { %>
+    <div>
+      <h2><%= game.title %></h2>
+      <a href="/game/<%= game.name %>">Voir la fiche du jeu</a>
+    </div>
+    <% } %>
+  </div>
+</main>
+
+<%- include('partials/footer.ejs') %>
